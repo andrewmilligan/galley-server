@@ -1,9 +1,10 @@
-const Delta = require('quill-delta')
+import Delta from 'quill-delta'
+import socketio from 'socket.io'
 
 const DOCUMENTS = new Map()
 const DEFAULT_VALUE = { ops: [] }
 
-const io = require('socket.io')(3001, {
+const io = socketio(3001, {
   cors: {
     origin: 'http://localhost:3000',
     methods: ['GET', 'POST'],

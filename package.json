@@ -5,9 +5,10 @@
   "author": "Andrew Milligan",
   "license": "ISC",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon -r esm index.js"
   },
   "dependencies": {
+    "esm": "^3.2.25",
     "quill-delta": "^4.2.2",
     "socket.io": "^4.0.2"
   },
