@@ -25,7 +25,7 @@ io.on('connection', socket => {
 
     socket.on('send-changes', delta => {
       findAndCreateOrUpdate(documentId, delta)
-      console.log(`Broadcasting changes to document ${documentId}:`, delta)
+      console.log(`Broadcasting changes to document ${documentId}:`, JSON.stringify(delta, null, 2))
       socket.broadcast.to(documentId).emit('receive-changes', delta)
     })
   })
